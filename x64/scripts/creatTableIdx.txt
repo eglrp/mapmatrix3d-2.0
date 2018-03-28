@@ -1,0 +1,13 @@
+--创建表的各个字段的索引
+
+CREATE INDEX ID_idx_param_table_name ON param_table_name(ID);
+CREATE INDEX ID_V1_X_param_table_name ON param_table_name(V1_X);
+CREATE INDEX ID_V1_Y_param_table_name ON param_table_name(V1_Y);
+CREATE INDEX ID_V1_Z_param_table_name ON param_table_name(V1_Z);
+CREATE INDEX ID_V2_X_param_table_name ON param_table_name(V2_X);
+CREATE INDEX ID_V2_Y_param_table_name ON param_table_name(V2_Y);
+CREATE INDEX ID_V2_Z_param_table_name ON param_table_name(V2_Z);
+CREATE INDEX ID_V3_X_param_table_name ON param_table_name(V3_X);
+CREATE INDEX ID_V3_Y_param_table_name ON param_table_name(V3_Y);
+CREATE INDEX ID_V3_Z_param_table_name ON param_table_name(V3_Z);
+CREATE INDEX ID_geom_param_table_name ON param_table_name USING GIST (geom);

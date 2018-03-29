@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -133,7 +133,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;MM3DPRODUCTMODULE_EXPORTS;OSGDOMLIBDLL;OSGDSMLIBDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\AdditionalDependency;..\osgFinder;..\OSG\include;..\opencv2_1\x64\include\opencv;..\osgEditor;..\MFCDepends;..\CallBackFuncType;..\boost\include;..\gdal\include;..\Algorithm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\AdditionalDependency;..\osgFinder;..\..\3rdParty\OSG\include;..\..\3rdParty\opencv2_1\x64\include\opencv;..\osgEditor;..\MFCDepends;..\CallBackFuncType;..\..\3rdParty\boost\include;..\..\3rdParty\gdal\include;..\Algorithm</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -141,7 +141,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\x64\Release;..\opencv2_1\x64\lib;..\OSG\lib;..\boost\lib;..\gdal\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\x64\Release;..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\OSG\lib;..\..\3rdParty\boost\lib;..\..\3rdParty\gdal\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>AdditionalDependency.lib;osgFinder.lib;osgEditor.lib;cxcore210.lib;cv210.lib;highgui210.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgText.lib;osgManipulator.lib;osgUtil.lib;osgViewer.lib;MFCDepends.lib;glew32s.lib;glu32.lib;opengl32.lib;CallBackFuncType.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;gdal_dhj_win64_i.lib;Algorithm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

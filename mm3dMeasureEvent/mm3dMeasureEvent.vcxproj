@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -133,7 +133,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;MM3DMEASUREEVENT_EXPORTS;MEASUREEVENTLIBDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\AdditionalDependency;..\OSG\include;..\BaseDrawer;..\BaseUserEvent;..\CallBackFuncType;..\boost\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\AdditionalDependency;..\..\3rdParty\OSG\include;..\BaseDrawer;..\BaseUserEvent;..\CallBackFuncType;..\..\3rdParty\boost\include</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -141,7 +141,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\OSG\lib;..\x64\Release;..\boost\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\x64\Release;..\..\3rdParty\boost\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>BaseUserEvent.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;CallBackFuncType.lib;AdditionalDependency.lib;osg.lib;osgDB.lib;osgUtil.lib;osgText.lib;osgViewer.lib;osgGA.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

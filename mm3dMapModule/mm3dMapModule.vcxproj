@@ -143,7 +143,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\3rdParty\boost\lib;..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\OSG\lib;..\x64\Release;..\..\3rdParty\sqlite3\lib;..\..\3rdParty\gdal\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Algorithm.lib;MFCDepends.lib;CallBackFuncType.lib;osgManipulator.lib;cxcore210.lib;cv210.lib;BaseUserEvent.lib;BaseDrawer.lib;CV_Line.lib;osgFinder.lib;AdditionalDependency.lib;osg.lib;osgDB.lib;osgGA.lib;osgUtil.lib;osgViewer.lib;OpenThreads.lib;gdal_i.lib;ogrsf_frmts.lib;ogrsf_frmts_sup.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Algorithm.lib;MFCDepends.lib;CallBackFuncType.lib;osgManipulator.lib;cxcore210.lib;cv210.lib;BaseUserEvent.lib;BaseDrawer.lib;CV_Line.lib;osgFinder.lib;AdditionalDependency.lib;osg.lib;osgDB.lib;osgGA.lib;osgUtil.lib;osgViewer.lib;OpenThreads.lib;gdal_i.lib;ogrsf_frmts_sup.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

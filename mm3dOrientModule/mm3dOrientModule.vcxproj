@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -133,7 +133,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;MM3DORIENTMODULE_EXPORTS;HORIZONLIBDLL;OSGORIENTLIBDLL;OSGSTITCHLIBDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\OSG\include;..\AdditionalDependency;..\osgFinder;..\osgEditor;..\opencv2_1\x64\include\opencv;..\MFCDepends;..\Algorithm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\3rdParty\OSG\include;..\AdditionalDependency;..\osgFinder;..\osgEditor;..\..\3rdParty\opencv2_1\x64\include\opencv;..\MFCDepends;..\Algorithm</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -142,7 +142,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>osg.lib;osgDB.lib;osgGA.lib;osgUtil.lib;osgViewer.lib;OpenThreads.lib;AdditionalDependency.lib;osgFinder.lib;osgEditor.lib;cxcore210.lib;cv210.lib;highgui210.lib;MFCDepends.lib;Algorithm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\OSG\lib;..\x64\Release;..\opencv2_1\x64\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\x64\Release;..\..\3rdParty\opencv2_1\x64\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

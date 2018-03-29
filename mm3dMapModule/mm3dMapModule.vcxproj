@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -134,7 +134,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;MM3DMAPMODULE_EXPORTS;EXTRACTWALLLIBDLL;ALPHALIBDLL;DLL_HATCH_APILIBDLL;DLL_OUTLINE_APILIBDLL;DLL_OUTLINE2_APILIBDLL;DLL_OUTLINE3_APILIBDLL;DLL_SHAPEFILE_APILIBDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\Algorithm;..\MFCDepends;..\boost\include;..\CallBackFuncType;..\opencv2_1\x64\include\opencv;..\BaseUserEvent;..\BaseDrawer;..\CV_Line;..\osgFinder;..\AdditionalDependency;..\sqliteDatabase;..\sqlite3\include;..\OSG\include;ogr;gdal_111;ogr\ogrsf_frmts</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Algorithm;..\MFCDepends;..\..\3rdParty\boost\include;..\CallBackFuncType;..\..\3rdParty\opencv2_1\x64\include\opencv;..\BaseUserEvent;..\BaseDrawer;..\CV_Line;..\osgFinder;..\AdditionalDependency;..\sqliteDatabase;..\..\3rdParty\sqlite3\include;..\..\3rdParty\OSG\include;..\..\3rdParty\ogr;..\..\3rdParty\gdal_111;..\..\3rdParty\ogr\ogrsf_frmts</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -142,8 +142,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\boost\lib;..\opencv2_1\x64\lib;..\OSG\lib;..\x64\Release;..\sqlite3\lib;lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Algorithm.lib;MFCDepends.lib;CallBackFuncType.lib;osgManipulator.lib;cxcore210.lib;cv210.lib;BaseUserEvent.lib;BaseDrawer.lib;CV_Line.lib;osgFinder.lib;AdditionalDependency.lib;sqliteDatabase.lib;osg.lib;osgDB.lib;osgGA.lib;osgUtil.lib;osgViewer.lib;OpenThreads.lib;sqlite3.lib;gdal_i.lib;ogrsf_frmts.lib;ogrsf_frmts_sup.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\3rdParty\boost\lib;..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\OSG\lib;..\x64\Release;..\..\3rdParty\sqlite3\lib;..\..\3rdParty\gdal\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Algorithm.lib;MFCDepends.lib;CallBackFuncType.lib;osgManipulator.lib;cxcore210.lib;cv210.lib;BaseUserEvent.lib;BaseDrawer.lib;CV_Line.lib;osgFinder.lib;AdditionalDependency.lib;osg.lib;osgDB.lib;osgGA.lib;osgUtil.lib;osgViewer.lib;OpenThreads.lib;gdal_i.lib;ogrsf_frmts.lib;ogrsf_frmts_sup.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

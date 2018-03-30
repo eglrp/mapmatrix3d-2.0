@@ -1,7 +1,0 @@
---创建表的各个字段的索引
-
-CREATE INDEX radius_idx_param_table_name ON extent(radius);
-CREATE INDEX center_x_index ON extent(center_x);
-CREATE INDEX center_y_index ON extent(center_y);
-CREATE INDEX center_z_index ON extent(center_z);
-

@@ -1,1 +1,0 @@
-INSERT INTO param_table_name (TABLE_NAME, PARENT_NAME, LEVEL, CENTER_X, CENTER_Y, CENTER_Z, RADIUS) VALUES param_insert_value;

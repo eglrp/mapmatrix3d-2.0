@@ -1,4 +1,0 @@
---创建子表
-
-CREATE TABLE param_table_name() INHERITS (parentTb);
-

@@ -1173,7 +1173,7 @@ void CMapMatrix3DEditorApp::OnButtonStartRepairHole()
 		return;
 	}
 
-	//IOsgMfcViewer->ObtainEditEventSlot()->();
+	IOsgMfcViewer->ObtainEditEventSlot()->RepairHole();
 	
 }
 

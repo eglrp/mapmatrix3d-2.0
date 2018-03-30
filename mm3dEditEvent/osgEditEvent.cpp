@@ -28,6 +28,20 @@ COsgEditEvent::COsgEditEvent(osgViewer::Viewer *viewer, osg::Group *root, osg::G
 	vecEditEvent.push_back(selTileRemoveEvent);
 }
 
+void COsgEditEvent::RepairHole()
+{
+	for (int i = 0; i < vecEditEvent.size(); i++)
+	{
+		COsgRepairHoleEvent* repairHoleEvent = dynamic_cast<COsgRepairHoleEvent*> (vecEditEvent[i]);
+
+		if (repairHoleEvent)
+		{
+			repairHoleEvent->StartRepairHole();
+			break;
+		}
+	}
+}
+
 void COsgEditEvent::addEventToViewer(osg::ref_ptr<osgViewer::Viewer> viewer)
 {
 	for (int i = 0; i < vecEditEvent.size(); i++)

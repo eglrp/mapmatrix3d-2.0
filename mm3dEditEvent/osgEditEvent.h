@@ -10,6 +10,8 @@ public:
 	COsgEditEvent(osgViewer::Viewer *viewer, osg::Group *root, osg::Group* editGroup, osg::Group* tempGroup, osg::Group* scopeGroup, osg::Group* dragGroup,
 		InterfaceSigEventCallBack* iSigEventCallBack);
 
+	virtual void RepairHole();
+
 	virtual void addEventToViewer(osg::ref_ptr<osgViewer::Viewer> viewer);
 
 	virtual void ClipHeight();

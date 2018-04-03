@@ -1,4 +1,5 @@
 
+
 .vs/MapMatrix3D Editor/v14/.suo
 *.lastbuildstate
 *.tlog
@@ -16,3 +17,6 @@
 *.iobj
 *.ipdb
 *.lib
+MapMatrix3D Editor.VC.db
+MapMatrix3D Editor.VC.VC.opendb
+

@@ -12,6 +12,8 @@
 class EDITEVENTAPI InterfaceOsgEditEvent
 {
 public:
+	virtual void RepairHole() = 0;
+
 	virtual void addEventToViewer(osg::ref_ptr<osgViewer::Viewer> viewer) = 0;
 
 	virtual void ClipHeight() = 0;

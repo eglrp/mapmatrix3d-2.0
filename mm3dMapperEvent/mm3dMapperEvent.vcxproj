@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -80,6 +80,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\bin_mapMatrix3D\X64\Release\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -142,7 +143,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\3rdParty\gdal\lib;..\..\3rdParty\json\lib;..\..\3rdParty\postgre\lib;..\x64\Release;..\..\3rdParty\OSG\lib;..\..\3rdParty\boost\lib;..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\sqlite3\lib;..\..\3rdParty\otherDependency</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\3rdParty\gdal\lib;..\..\3rdParty\json\lib;..\..\3rdParty\postgre\lib;..\..\bin_mapMatrix3D\X64\Release\;..\..\3rdParty\OSG\lib;..\..\3rdParty\boost\lib;..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\sqlite3\lib;..\..\3rdParty\otherDependency;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>jsoncpp.lib;libpq.lib;gdal_dhj_win64_i.lib;BaseUserEvent.lib;AdditionalDependency.lib;osg.lib;osgDB.lib;osgUtil.lib;osgText.lib;osgViewer.lib;osgGA.lib;BaseDrawer.lib;CallBackFuncType.lib;osgFinder.lib;MFCDepends.lib;CV_Line.lib;cv210.lib;cxcore210.lib;highgui210.lib;osgManipulator.lib;Algorithm.lib;sqlite3.lib;sqliteDatabase.lib;mm3dMapModule.lib;mm3dMonoModule.lib;mm3dDrawEvent.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

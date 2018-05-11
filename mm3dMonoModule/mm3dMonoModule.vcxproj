@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -80,6 +80,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\bin_mapMatrix3D\X64\Release\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -141,7 +142,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\3rdParty\opencv2_1\x64\lib;..\x64\Release</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\3rdParty\opencv2_1\x64\lib;..\..\bin_mapMatrix3D\X64\Release\</AdditionalLibraryDirectories>
       <AdditionalDependencies>osg.lib;osgDB.lib;osgUtil.lib;highgui210.lib;cxcore210.lib;cv210.lib;Algorithm.lib;osgFinder.lib;osgEditor.lib;AdditionalDependency.lib;MFCDepends.lib;CallBackFuncType.lib;BaseDrawer.lib;sqliteDatabase.lib;CV_Line.lib;mm3dProductModule.lib;mm3dEditModule.lib;mm3dMapModule.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

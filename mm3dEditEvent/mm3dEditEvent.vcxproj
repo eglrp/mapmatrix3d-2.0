@@ -80,7 +80,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\bin_mapMatrix3D\X64\Release\</OutDir>
+    <OutDir>..\..\3rdParty\lib_mapMatrix3D\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -142,7 +142,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\bin_mapMatrix3D\X64\Release\;..\..\3rdParty\boost\lib;..\..\3rdParty\opencv2_1\x64\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\3rdParty\lib_mapMatrix3D\;..\..\3rdParty\boost\lib;..\..\3rdParty\opencv2_1\x64\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>BaseUserEvent.lib;BaseDrawer.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;AdditionalDependency.lib;CallBackFuncType.lib;MFCDepends.lib;Algorithm.lib;osgFinder.lib;osgEditor.lib;osg.lib;osgDB.lib;osgUtil.lib;osgText.lib;osgViewer.lib;osgGA.lib;cxcore210.lib;cv210.lib;highgui210.lib;osgManipulator.lib;mm3dEditModule.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

@@ -141,7 +141,7 @@
       <AdditionalLibraryDirectories>..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\OSG\lib;..\..\3rdParty\lib_mapMatrix3D</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\ /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -1,0 +1,17 @@
+#pragma once
+#include <osgEarth/MapNode>
+#include <osgEarth/TerrainEngineNode>
+#include <osgEarth/ElevationQuery>
+#include <osgEarth/StringUtils>
+#include <osgEarth/Terrain>
+#include <osgEarthUtil/EarthManipulator>
+#include <osgEarthUtil/Controls>
+#include <osgEarthUtil/LatLongFormatter>
+#include <osgEarthAnnotation/PlaceNode>
+#include <osgEarthAnnotation/LabelNode>
+#include <osgEarthAnnotation/LocalGeometryNode>
+#include <osgEarthAnnotation/FeatureNode>
+#include <osgEarthAnnotation/Decluttering>
+#include <osgEarthAnnotation/ImageOverlay>
+#include <osgEarthAnnotation/ImageOverlayEditor>
+#include <osgEarthUtil/ExampleResources>

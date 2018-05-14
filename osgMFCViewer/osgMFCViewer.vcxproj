@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E90FF7AB-7E2D-434C-9BF4-B5BC6C327638}</ProjectGuid>
+    <RootNamespace>osgMFCViewer</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <EmbedManifest>true</EmbedManifest>
+    <OutDir>..\..\3rdParty\lib_mapMatrix3D\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>.\osgMFCViewer.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>.\osgMFCViewer.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../OSG/include;..\AdditionalDependency</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\osgMFCViewer.def</ModuleDefinitionFile>
+      <AdditionalLibraryDirectories>..\OSG\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>AdditionalDependency.lib;Algorithm.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;MFCVIEWERIBDLL;ORISLOTLIBDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../OSG/include;..\AdditionalDependency;..\UserEvent;..\opencv2_1\x64\include\opencv;..\Compass;..\CallBackFuncType;..\boost\include;..\osgDrawSinglePtEvent;..\osgMeasurePtEvent;..\BaseDrawer;..\BaseUserEvent;..\osgDrawSingleLineEvent;..\osgMeasureSingleLineEvent;..\osgDrawMultiLineEvent;..\osgDrawMultiPtEvent;..\osgDrawClosedLineHandEvent;..\osgMeasureMultiLineEvent;..\osgDrawClosedLineEvent;..\osgMeasureAreaEvent;..\osgMoveWholeSceneXY;..\osgMoveWholeSceneZ;..\osgAbsOrientEvent;..\osgSceneMatchEvent;..\osgInternetOrientEvent;..\osgOrient;..\Algorithm;..\osgDrawMultiSingleLineEvent;..\osgClipByHeightEvent;..\osgClipByPolygonEvent;..\osgHollowOutByPolygonEvent;..\osgRepairHoleEvent;..\osgSelTileRemoveEvent;..\osgExtractHatchingEvent;..\osgExtractOutlineEvent;..\osgExtractAccuraOutlineEvent;..\osgManualOrientEvent;..\osgShowCoordEvent;..\osgDrawFlatPlaneEvent;..\osgHollowOutSuspendEvent;..\osgExtractHandPaintOutlineEvent;..\osgExtractHandPaintLineEvent;..\osgDrawMultiClosedLineEvent;..\osgDrawClosedLinehandEvent;..\osgExtractTriangleBaseOutline;..\osgFinder;..\osgDrawRectangleEvent;..\osgSelectLineByRectangleEvent;..\osgSelectLineByAreaEvent;..\osgDrawClosedLineDBclickEvent;..\osgDrawMultiLineHandEvent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../OSG/include;..\AdditionalDependency;..\UserEvent;..\opencv2_1\x64\include\opencv;..\Compass;..\CallBackFuncType;..\boost\include;..\osgDrawSinglePtEvent;..\osgMeasurePtEvent;..\BaseDrawer;..\BaseUserEvent;..\osgDrawSingleLineEvent;..\osgMeasureSingleLineEvent;..\osgDrawMultiLineEvent;..\osgDrawMultiPtEvent;..\osgDrawClosedLineHandEvent;..\osgMeasureMultiLineEvent;..\osgDrawClosedLineEvent;..\osgMeasureAreaEvent;..\osgMoveWholeSceneXY;..\osgMoveWholeSceneZ;..\osgAbsOrientEvent;..\osgSceneMatchEvent;..\osgInternetOrientEvent;..\osgOrient;..\Algorithm;..\osgDrawMultiSingleLineEvent;..\osgClipByHeightEvent;..\osgClipByPolygonEvent;..\osgHollowOutByPolygonEvent;..\osgRepairHoleEvent;..\osgSelTileRemoveEvent;..\osgExtractHatchingEvent;..\osgExtractOutlineEvent;..\osgExtractAccuraOutlineEvent;..\osgManualOrientEvent;..\osgShowCoordEvent;..\osgDrawFlatPlaneEvent;..\osgHollowOutSuspendEvent;..\osgExtractHandPaintOutlineEvent;..\osgExtractHandPaintLineEvent;..\osgDrawMultiClosedLineEvent;..\osgDrawClosedLinehandEvent;..\osgExtractTriangleBaseOutline;..\osgFinder;..\osgDrawRectangleEvent;..\osgSelectLineByRectangleEvent;..\osgSelectLineByAreaEvent;..\osgDrawClosedLineDBclickEvent;..\MFCDepends;..\toShpAndDxf;..\osgSelectLineByClickEvent;..\osgDrawMultiLineHandEvent;..\osgDomGenerator;..\SceneDemGenerator;..\osgMultiFileLinkCreator;..\osgExtractWallSpaceEvent;..\osgManualExtractTexture;..\osgWholeSceneMatchEvent;..\osgAutoExtractWallPointEvent;..\sqliteDatabase;..\sqlite3\include;..\osgExtractObjectByPolygonEvent;..\osgQuickClipModelByTriangleEvent;..\osgQuickDeleteSingleTriangleEvent;..\osgQuickDeleteSingleTriangleByLineEvent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\osgDrawHorizLineEvent;..\osgCombineGroupEvent;..\osgExtractLineInsectEvent;..\osgExtractWallInsectEvent;..\osgHandExractWallSpaceEvent;..\osgFittingWallSpaceEvent;../OSG/include;..\AdditionalDependency;..\UserEvent;..\opencv2_1\x64\include\opencv;..\Compass;..\CallBackFuncType;..\boost\include;..\osgDrawSinglePtEvent;..\osgMeasurePtEvent;..\BaseDrawer;..\BaseUserEvent;..\osgDrawSingleLineEvent;..\osgMeasureSingleLineEvent;..\osgDrawMultiLineEvent;..\osgDrawMultiPtEvent;..\osgDrawClosedLineHandEvent;..\osgMeasureMultiLineEvent;..\osgDrawClosedLineEvent;..\osgMeasureAreaEvent;..\osgMoveWholeSceneXY;..\osgMoveWholeSceneZ;..\osgAbsOrientEvent;..\osgSceneMatchEvent;..\osgInternetOrientEvent;..\osgOrient;..\Algorithm;..\osgDrawMultiSingleLineEvent;..\osgClipByHeightEvent;..\osgClipByPolygonEvent;..\osgHollowOutByPolygonEvent;..\osgRepairHoleEvent;..\osgSelTileRemoveEvent;..\osgExtractHatchingEvent;..\osgExtractOutlineEvent;..\osgExtractAccuraOutlineEvent;..\osgManualOrientEvent;..\osgShowCoordEvent;..\osgDrawFlatPlaneEvent;..\osgHollowOutSuspendEvent;..\osgExtractHandPaintOutlineEvent;..\osgExtractHandPaintLineEvent;..\osgDrawMultiClosedLineEvent;..\osgDrawClosedLinehandEvent;..\osgExtractTriangleBaseOutline;..\osgFinder;..\osgDrawRectangleEvent;..\osgSelectLineByRectangleEvent;..\osgSelectLineByAreaEvent;..\osgDrawClosedLineDBclickEvent;..\MFCDepends;..\toShpAndDxf;..\osgSelectLineByClickEvent;..\osgDrawMultiLineHandEvent;..\osgDomGenerator;..\SceneDemGenerator;..\osgMultiFileLinkCreator;..\osgExtractWallSpaceEvent;..\osgManualExtractTexture;..\osgWholeSceneMatchEvent;..\osgAutoExtractWallPointEvent;..\sqliteDatabase;..\sqlite3\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\osgDrawHorizLineEvent;..\osgCombineGroupEvent;..\osgExtractWallInsectEvent;..\osgExtractLineInsectEvent;..\osgHandExractWallSpaceEvent;..\osgFittingWallSpaceEvent;..\osgQuickDeleteSingleTriangleByLineEvent;../OSG/include;..\AdditionalDependency;..\UserEvent;..\opencv2_1\x64\include\opencv;..\Compass;..\CallBackFuncType;..\boost\include;..\osgDrawSinglePtEvent;..\osgMeasurePtEvent;..\BaseDrawer;..\BaseUserEvent;..\osgDrawSingleLineEvent;..\osgMeasureSingleLineEvent;..\osgDrawMultiLineEvent;..\osgDrawMultiPtEvent;..\osgDrawClosedLineHandEvent;..\osgMeasureMultiLineEvent;..\osgDrawClosedLineEvent;..\osgMeasureAreaEvent;..\osgMoveWholeSceneXY;..\osgMoveWholeSceneZ;..\osgAbsOrientEvent;..\osgSceneMatchEvent;..\osgInternetOrientEvent;..\osgOrient;..\Algorithm;..\osgDrawMultiSingleLineEvent;..\osgClipByHeightEvent;..\osgClipByPolygonEvent;..\osgHollowOutByPolygonEvent;..\osgRepairHoleEvent;..\osgSelTileRemoveEvent;..\osgExtractHatchingEvent;..\osgExtractOutlineEvent;..\osgExtractAccuraOutlineEvent;..\osgManualOrientEvent;..\osgShowCoordEvent;..\osgDrawFlatPlaneEvent;..\osgHollowOutSuspendEvent;..\osgExtractHandPaintOutlineEvent;..\osgExtractHandPaintLineEvent;..\osgDrawMultiClosedLineEvent;..\osgDrawClosedLinehandEvent;..\osgExtractTriangleBaseOutline;..\osgFinder;..\osgDrawRectangleEvent;..\osgSelectLineByRectangleEvent;..\osgSelectLineByAreaEvent;..\osgDrawClosedLineDBclickEvent;..\MFCDepends;..\toShpAndDxf;..\osgSelectLineByClickEvent;..\osgDrawMultiLineHandEvent;..\osgDomGenerator;..\SceneDemGenerator;..\osgMultiFileLinkCreator;..\osgManualExtractTexture;..\osgWholeSceneMatchEvent;..\osgAutoExtractWallPointEvent;..\sqliteDatabase;..\sqlite3\include;..\osgExtractObjectByPolygonEvent;..\osgQuickClipModelByTriangleEvent;..\osgQuickDeleteSingleTriangleEvent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../OSG/include;..\AdditionalDependency;..\UserEvent;..\opencv2_1\x64\include\opencv;..\Compass;..\CallBackFuncType;..\boost\include;..\osgDrawSinglePtEvent;..\osgMeasurePtEvent;..\BaseDrawer;..\BaseUserEvent;..\osgDrawSingleLineEvent;..\osgMeasureSingleLineEvent;..\osgDrawMultiLineEvent;..\osgDrawMultiPtEvent;..\osgDrawClosedLineHandEvent;..\osgMeasureMultiLineEvent;..\osgDrawClosedLineEvent;..\osgMeasureAreaEvent;..\osgMoveWholeSceneXY;..\osgMoveWholeSceneZ;..\osgAbsOrientEvent;..\osgSceneMatchEvent;..\osgInternetOrientEvent;..\osgOrient;..\Algorithm;..\osgDrawMultiSingleLineEvent;..\osgClipByHeightEvent;..\osgClipByPolygonEvent;..\osgHollowOutByPolygonEvent;..\osgRepairHoleEvent;..\osgSelTileRemoveEvent;..\osgExtractHatchingEvent;..\osgExtractOutlineEvent;..\osgExtractAccuraOutlineEvent;..\osgManualOrientEvent;..\osgShowCoordEvent;..\osgDrawFlatPlaneEvent;..\osgHollowOutSuspendEvent;..\osgExtractHandPaintOutlineEvent;..\osgExtractHandPaintLineEvent;..\osgDrawMultiClosedLineEvent;..\osgDrawClosedLinehandEvent;..\osgExtractTriangleBaseOutline;..\osgFinder;..\osgDrawRectangleEvent;..\osgSelectLineByRectangleEvent;..\osgSelectLineByAreaEvent;..\osgDrawClosedLineDBclickEvent;..\MFCDepends;..\toShpAndDxf;..\osgSelectLineByClickEvent;..\osgDrawMultiLineHandEvent;..\osgDomGenerator;..\SceneDemGenerator;..\osgMultiFileLinkCreator;..\osgExtractWallSpaceEvent;..\osgManualExtractTexture;..\osgWholeSceneMatchEvent;..\osgAutoExtractWallPointEvent;..\sqliteDatabase;..\sqlite3\include;..\osgExtractObjectByPolygonEvent;..\osgQuickClipModelByTriangleEvent;..\osgQuickDeleteSingleTriangleEvent;..\osgFittingWallSpaceEvent;..\osgHandExractWallSpaceEvent;..\osgExtractWallInsectEvent;..\osgExtractLineInsectEvent;..\osgCombineGroupEvent;..\osgDrawHorizLineEvent;..\osgQuickDeleteSingleTriangleByLineEvent;..\osgQuickDeleteTriangleBySolidEvent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\osgExtractTriangleBaseOutlineInAreaEvent;../OSG/include;..\AdditionalDependency;..\UserEvent;..\opencv2_1\x64\include\opencv;..\Compass;..\CallBackFuncType;..\boost\include;..\osgDrawSinglePtEvent;..\osgMeasurePtEvent;..\BaseDrawer;..\BaseUserEvent;..\osgDrawSingleLineEvent;..\osgMeasureSingleLineEvent;..\osgDrawMultiLineEvent;..\osgDrawMultiPtEvent;..\osgDrawClosedLineHandEvent;..\osgMeasureMultiLineEvent;..\osgDrawClosedLineEvent;..\osgMeasureAreaEvent;..\osgMoveWholeSceneXY;..\osgMoveWholeSceneZ;..\osgAbsOrientEvent;..\osgSceneMatchEvent;..\osgInternetOrientEvent;..\osgOrient;..\Algorithm;..\osgDrawMultiSingleLineEvent;..\osgClipByHeightEvent;..\osgClipByPolygonEvent;..\osgHollowOutByPolygonEvent;..\osgRepairHoleEvent;..\osgSelTileRemoveEvent;..\osgExtractHatchingEvent;..\osgExtractOutlineEvent;..\osgExtractAccuraOutlineEvent;..\osgManualOrientEvent;..\osgShowCoordEvent;..\osgDrawFlatPlaneEvent;..\osgHollowOutSuspendEvent;..\osgExtractHandPaintOutlineEvent;..\osgExtractHandPaintLineEvent;..\osgDrawMultiClosedLineEvent;..\osgDrawClosedLinehandEvent;..\osgExtractTriangleBaseOutline;..\osgFinder;..\osgDrawRectangleEvent;..\osgSelectLineByRectangleEvent;..\osgSelectLineByAreaEvent;..\osgDrawClosedLineDBclickEvent;..\MFCDepends;..\toShpAndDxf;..\osgSelectLineByClickEvent;..\osgDrawMultiLineHandEvent;..\osgDomGenerator;..\SceneDemGenerator;..\osgMultiFileLinkCreator;..\osgExtractWallSpaceEvent;..\osgManualExtractTexture;..\osgWholeSceneMatchEvent;..\osgAutoExtractWallPointEvent;..\sqliteDatabase;..\sqlite3\include;..\osgExtractObjectByPolygonEvent;..\osgQuickClipModelByTriangleEvent;..\osgQuickDeleteSingleTriangleEvent;..\osgFittingWallSpaceEvent;..\osgHandExractWallSpaceEvent;..\osgExtractWallInsectEvent;..\osgExtractLineInsectEvent;..\osgCombineGroupEvent;..\osgDrawHorizLineEvent;..\osgQuickDeleteSingleTriangleByLineEvent;..\osgHighLightObjectByClickEvent;..\osgQuickDeleteTriangleBySolidEvent;..\osgEditor;..\osgLinkPropertyWithObjectEvent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\osgEditor;..\..\3rdParty/OSG/include;..\AdditionalDependency;..\..\3rdParty\opencv2_1\x64\include\opencv;..\Compass;..\CallBackFuncType;..\..\3rdParty\boost\include;..\BaseUserEvent;..\Algorithm;..\osgFinder;..\MFCDepends;..\osgMultiFileLinkCreator;..\sqliteDatabase;..\sqlite3\include;..\mm3dDrawEvent;..\mm3dEditEvent;..\mm3dMapperEvent;..\mm3dMeasureEvent;..\mm3dMonomerEvent;..\mm3dOrientEvent;..\osgShowCoordEvent;..\BaseDrawer</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\osgMFCViewer.def</ModuleDefinitionFile>
+      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\3rdParty\lib_mapMatrix3D\;..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\boost\lib;..\..\3rdParty\sqlite3\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CallBackFuncType.lib;AdditionalDependency.lib;osgMeasurePtEvent.lib;osgMeasureSingleLineEvent.lib;osgMeasureMultiLineEvent.lib;osgMeasureAreaEvent.lib;osgDrawSinglePtEvent.lib;osgDrawMultiPtEvent.lib;osgDrawSingleLineEvent.lib;osgDrawMultiSingleLineEvent.lib;osgDrawMultiLineEvent.lib;osgDrawClosedLineEvent.lib;osgDrawClosedLineHandEvent.lib;osgDrawFlatPlaneEvent.lib;osgMoveWholeSceneXY.lib;osgMoveWholeSceneZ.lib;osgShowCoordEvent.lib;BaseUserEvent.lib;Algorithm.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgText.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;cxcore210.lib;cv210.lib;highgui210.lib;Compass.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;BaseDrawer.lib;osgInternetOrientEvent.lib;osgSceneMatchEvent.lib;osgAbsOrientEvent.lib;osgClipByHeightEvent.lib;osgClipByPolygonEvent.lib;osgHollowOutByPolygonEvent.lib;osgRepairHoleEvent.lib;osgSelTileRemoveEvent.lib;osgExtractHatchingEvent.lib;osgExtractOutlineEvent.lib;osgManualOrientEvent.lib;osgHollowOutSuspendEvent.lib;osgExtractAccuraOutlineEvent.lib;osgExtractHandPaintOutlineEvent.lib;osgExtractHandPaintLineEvent.lib;osgDrawMultiClosedLineEvent.lib;osgExtractTriangleBaseOutlineEvent.lib;osgFinder.lib;osgDrawRectangleEvent.lib;osgSelectLineByRectangleEvent.lib;osgSelectLineByAreaEvent.lib;osgDrawClosedLineDBclickEvent.lib;osgDrawMultiLineHandEvent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CallBackFuncType.lib;AdditionalDependency.lib;osgMeasurePtEvent.lib;osgMeasureSingleLineEvent.lib;osgMeasureMultiLineEvent.lib;osgMeasureAreaEvent.lib;osgDrawSinglePtEvent.lib;osgDrawMultiPtEvent.lib;osgDrawSingleLineEvent.lib;osgDrawMultiSingleLineEvent.lib;osgDrawMultiLineEvent.lib;osgDrawClosedLineEvent.lib;osgDrawClosedLineHandEvent.lib;osgDrawFlatPlaneEvent.lib;osgMoveWholeSceneXY.lib;osgMoveWholeSceneZ.lib;osgShowCoordEvent.lib;BaseUserEvent.lib;Algorithm.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgText.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;cxcore210.lib;cv210.lib;highgui210.lib;Compass.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;BaseDrawer.lib;osgInternetOrientEvent.lib;osgSceneMatchEvent.lib;osgAbsOrientEvent.lib;osgClipByHeightEvent.lib;osgClipByPolygonEvent.lib;osgHollowOutByPolygonEvent.lib;osgRepairHoleEvent.lib;osgSelTileRemoveEvent.lib;osgExtractHatchingEvent.lib;osgExtractOutlineEvent.lib;osgExtractWallSpaceEvent.lib;osgManualOrientEvent.lib;osgHollowOutSuspendEvent.lib;osgExtractHandPaintOutlineEvent.lib;osgExtractHandPaintLineEvent.lib;osgDrawMultiClosedLineEvent.lib;osgExtractTriangleBaseOutlineEvent.lib;osgFinder.lib;osgDrawRectangleEvent.lib;osgSelectLineByRectangleEvent.lib;osgSelectLineByAreaEvent.lib;osgSelectLineByClickEvent.lib;osgDrawClosedLineDBclickEvent.lib;MFCDepends.lib;toShpAndDxf.lib;osgDrawMultiLineHandEvent.lib;osgDomGenerator.lib;SceneDemGenerator.lib;osgMultiFileLinkCreator.lib;osgManualExtractTextureEvent.lib;osgWholeSceneMatchEvent.lib;osgAutoExtractWallPointEvent.lib;sqliteDatabase.lib;sqlite3.lib;osgExtractObjectByPolygonEvent.lib;osgQuickClipModelByTriangleEvent.lib;osgQuickDeleteSingleTriangleEvent.lib;osgQuickDeleteSingleTriangleByLineEvent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>osgDrawHorizLineEvent.lib;osgCombineGroupEvent.lib;osgExtractLineInsectEvent.lib;osgExtractWallInsectEvent.lib;osgHandExractWallSpaceEvent.lib;osgFittingWallSpaceEvent.lib;CallBackFuncType.lib;AdditionalDependency.lib;osgMeasurePtEvent.lib;osgMeasureSingleLineEvent.lib;osgMeasureMultiLineEvent.lib;osgMeasureAreaEvent.lib;osgDrawSinglePtEvent.lib;osgDrawMultiPtEvent.lib;osgDrawSingleLineEvent.lib;osgDrawMultiSingleLineEvent.lib;osgDrawMultiLineEvent.lib;osgDrawClosedLineEvent.lib;osgDrawClosedLineHandEvent.lib;osgDrawFlatPlaneEvent.lib;osgMoveWholeSceneXY.lib;osgMoveWholeSceneZ.lib;osgShowCoordEvent.lib;BaseUserEvent.lib;Algorithm.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgText.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;cxcore210.lib;cv210.lib;highgui210.lib;Compass.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;BaseDrawer.lib;osgInternetOrientEvent.lib;osgSceneMatchEvent.lib;osgAbsOrientEvent.lib;osgClipByHeightEvent.lib;osgClipByPolygonEvent.lib;osgHollowOutByPolygonEvent.lib;osgRepairHoleEvent.lib;osgSelTileRemoveEvent.lib;osgExtractHatchingEvent.lib;osgExtractOutlineEvent.lib;osgExtractWallSpaceEvent.lib;osgManualOrientEvent.lib;osgHollowOutSuspendEvent.lib;osgExtractHandPaintOutlineEvent.lib;osgExtractHandPaintLineEvent.lib;osgDrawMultiClosedLineEvent.lib;osgExtractTriangleBaseOutlineEvent.lib;osgFinder.lib;osgDrawRectangleEvent.lib;osgSelectLineByRectangleEvent.lib;osgSelectLineByAreaEvent.lib;osgSelectLineByClickEvent.lib;osgDrawClosedLineDBclickEvent.lib;MFCDepends.lib;toShpAndDxf.lib;osgDrawMultiLineHandEvent.lib;osgDomGenerator.lib;SceneDemGenerator.lib;osgMultiFileLinkCreator.lib;osgManualExtractTextureEvent.lib;osgWholeSceneMatchEvent.lib;osgAutoExtractWallPointEvent.lib;sqliteDatabase.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>osgDrawHorizLineEvent.lib;osgFittingWallSpaceEvent.lib;osgHandExractWallSpaceEvent.lib;osgExtractWallInsectEvent.lib;osgExtractLineInsectEvent.lib;osgCombineGroupEvent.lib;osgQuickDeleteSingleTriangleByLineEvent.lib;CallBackFuncType.lib;AdditionalDependency.lib;osgMeasurePtEvent.lib;osgMeasureSingleLineEvent.lib;osgMeasureMultiLineEvent.lib;osgMeasureAreaEvent.lib;osgDrawSinglePtEvent.lib;osgDrawMultiPtEvent.lib;osgDrawSingleLineEvent.lib;osgDrawMultiSingleLineEvent.lib;osgDrawMultiLineEvent.lib;osgDrawClosedLineEvent.lib;osgDrawClosedLineHandEvent.lib;osgDrawFlatPlaneEvent.lib;osgMoveWholeSceneXY.lib;osgMoveWholeSceneZ.lib;osgShowCoordEvent.lib;BaseUserEvent.lib;Algorithm.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgText.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;cxcore210.lib;cv210.lib;highgui210.lib;Compass.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;BaseDrawer.lib;osgInternetOrientEvent.lib;osgSceneMatchEvent.lib;osgAbsOrientEvent.lib;osgClipByHeightEvent.lib;osgClipByPolygonEvent.lib;osgHollowOutByPolygonEvent.lib;osgRepairHoleEvent.lib;osgSelTileRemoveEvent.lib;osgExtractHatchingEvent.lib;osgExtractOutlineEvent.lib;osgManualOrientEvent.lib;osgHollowOutSuspendEvent.lib;osgExtractHandPaintOutlineEvent.lib;osgExtractHandPaintLineEvent.lib;osgDrawMultiClosedLineEvent.lib;osgExtractTriangleBaseOutlineEvent.lib;osgFinder.lib;osgDrawRectangleEvent.lib;osgSelectLineByRectangleEvent.lib;osgSelectLineByAreaEvent.lib;osgSelectLineByClickEvent.lib;osgDrawClosedLineDBclickEvent.lib;MFCDepends.lib;toShpAndDxf.lib;osgDrawMultiLineHandEvent.lib;osgDomGenerator.lib;SceneDemGenerator.lib;osgMultiFileLinkCreator.lib;osgManualExtractTextureEvent.lib;osgWholeSceneMatchEvent.lib;osgAutoExtractWallPointEvent.lib;sqliteDatabase.lib;sqlite3.lib;osgExtractObjectByPolygonEvent.lib;osgQuickClipModelByTriangleEvent.lib;osgQuickDeleteSingleTriangleEvent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CallBackFuncType.lib;AdditionalDependency.lib;osgMeasurePtEvent.lib;osgMeasureSingleLineEvent.lib;osgMeasureMultiLineEvent.lib;osgMeasureAreaEvent.lib;osgDrawSinglePtEvent.lib;osgDrawMultiPtEvent.lib;osgDrawSingleLineEvent.lib;osgDrawMultiSingleLineEvent.lib;osgDrawMultiLineEvent.lib;osgDrawClosedLineEvent.lib;osgDrawClosedLineHandEvent.lib;osgDrawFlatPlaneEvent.lib;osgMoveWholeSceneXY.lib;osgMoveWholeSceneZ.lib;osgShowCoordEvent.lib;BaseUserEvent.lib;Algorithm.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgText.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;cxcore210.lib;cv210.lib;highgui210.lib;Compass.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;BaseDrawer.lib;osgInternetOrientEvent.lib;osgSceneMatchEvent.lib;osgAbsOrientEvent.lib;osgClipByHeightEvent.lib;osgClipByPolygonEvent.lib;osgHollowOutByPolygonEvent.lib;osgRepairHoleEvent.lib;osgSelTileRemoveEvent.lib;osgExtractHatchingEvent.lib;osgExtractOutlineEvent.lib;osgExtractWallSpaceEvent.lib;osgManualOrientEvent.lib;osgHollowOutSuspendEvent.lib;osgExtractHandPaintOutlineEvent.lib;osgExtractHandPaintLineEvent.lib;osgDrawMultiClosedLineEvent.lib;osgExtractTriangleBaseOutlineEvent.lib;osgFinder.lib;osgDrawRectangleEvent.lib;osgSelectLineByRectangleEvent.lib;osgSelectLineByAreaEvent.lib;osgSelectLineByClickEvent.lib;osgDrawClosedLineDBclickEvent.lib;MFCDepends.lib;toShpAndDxf.lib;osgDrawMultiLineHandEvent.lib;osgDomGenerator.lib;SceneDemGenerator.lib;osgMultiFileLinkCreator.lib;osgManualExtractTextureEvent.lib;osgWholeSceneMatchEvent.lib;osgAutoExtractWallPointEvent.lib;sqliteDatabase.lib;sqlite3.lib;osgExtractObjectByPolygonEvent.lib;osgQuickClipModelByTriangleEvent.lib;osgQuickDeleteSingleTriangleEvent.lib;osgFittingWallSpaceEvent.lib;osgHandExractWallSpaceEvent.lib;osgExtractWallInsectEvent.lib;osgExtractLineInsectEvent.lib;osgCombineGroupEvent.lib;osgDrawHorizLineEvent.lib;osgQuickDeleteSingleTriangleByLineEvent.lib;osgQuickDeleteTriangleBySolidEvent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>osgExtractTriangleBaseOutlineInAreaEvent.lib;CallBackFuncType.lib;AdditionalDependency.lib;osgMeasurePtEvent.lib;osgMeasureSingleLineEvent.lib;osgMeasureMultiLineEvent.lib;osgMeasureAreaEvent.lib;osgDrawSinglePtEvent.lib;osgDrawMultiPtEvent.lib;osgDrawSingleLineEvent.lib;osgDrawMultiSingleLineEvent.lib;osgDrawMultiLineEvent.lib;osgDrawClosedLineEvent.lib;osgDrawClosedLineHandEvent.lib;osgDrawFlatPlaneEvent.lib;osgMoveWholeSceneXY.lib;osgMoveWholeSceneZ.lib;osgShowCoordEvent.lib;BaseUserEvent.lib;Algorithm.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgText.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;cxcore210.lib;cv210.lib;highgui210.lib;Compass.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;BaseDrawer.lib;osgInternetOrientEvent.lib;osgSceneMatchEvent.lib;osgAbsOrientEvent.lib;osgClipByHeightEvent.lib;osgClipByPolygonEvent.lib;osgHollowOutByPolygonEvent.lib;osgRepairHoleEvent.lib;osgSelTileRemoveEvent.lib;osgExtractHatchingEvent.lib;osgExtractOutlineEvent.lib;osgExtractWallSpaceEvent.lib;osgManualOrientEvent.lib;osgHollowOutSuspendEvent.lib;osgExtractHandPaintOutlineEvent.lib;osgExtractHandPaintLineEvent.lib;osgDrawMultiClosedLineEvent.lib;osgExtractTriangleBaseOutlineEvent.lib;osgFinder.lib;osgDrawRectangleEvent.lib;osgSelectLineByRectangleEvent.lib;osgSelectLineByAreaEvent.lib;osgSelectLineByClickEvent.lib;osgDrawClosedLineDBclickEvent.lib;MFCDepends.lib;toShpAndDxf.lib;osgDrawMultiLineHandEvent.lib;osgDomGenerator.lib;SceneDemGenerator.lib;osgMultiFileLinkCreator.lib;osgManualExtractTextureEvent.lib;osgWholeSceneMatchEvent.lib;osgAutoExtractWallPointEvent.lib;sqliteDatabase.lib;sqlite3.lib;osgExtractObjectByPolygonEvent.lib;osgQuickClipModelByTriangleEvent.lib;osgQuickDeleteSingleTriangleEvent.lib;osgFittingWallSpaceEvent.lib;osgHandExractWallSpaceEvent.lib;osgExtractWallInsectEvent.lib;osgExtractLineInsectEvent.lib;osgCombineGroupEvent.lib;osgDrawHorizLineEvent.lib;osgQuickDeleteSingleTriangleByLineEvent.lib;osgQuickDeleteTriangleBySolidEvent.lib;osgHighLightObjectByClickEvent.lib;osgEditor.lib;osgLinkPropertyWithObjectEvent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CallBackFuncType.lib;AdditionalDependency.lib;osgShowCoordEvent.lib;BaseUserEvent.lib;Algorithm.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgText.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;cxcore210.lib;cv210.lib;highgui210.lib;Compass.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;osgFinder.lib;MFCDepends.lib;osgMultiFileLinkCreator.lib;osgEditor.lib;mm3dDrawEvent.lib;mm3dMonomerEvent.lib;mm3dMeasureEvent.lib;mm3dEditEvent.lib;mm3dMapperEvent.lib;mm3dOrientEvent.lib;BaseDrawer.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="osgMFCViewer.def" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\osgMFCViewer.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="InterfaceOsgMfcViewer.cpp" />
+    <ClCompile Include="MFC_OSG.cpp" />
+    <ClCompile Include="SelfDefTerrainManipulator.cpp" />
+    <ClCompile Include="SelfDefTrackBallManipulator.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="InterfaceOsgMfcViewer.h" />
+    <ClInclude Include="MFC_OSG.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SelfDefTerrainManipulator.h" />
+    <ClInclude Include="SelfDefTrackBallManipulator.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="osgMFCViewer.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

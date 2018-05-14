@@ -1,0 +1,16 @@
+
+MapMatrix3D Editor.VC.db
+MapMatrix3D Editor.VC.VC.opendb
+*.log
+*.pch
+*.tlog
+*.obj
+*.pdb
+*.iobj
+*.ipdb
+*.exp
+*.ipch
+MFCDepends/x64/Release/MFCDepends.res
+osgMFCViewer/x64/Release/osgMFCViewer.res
+.vs/MapMatrix3D Editor/v14/.suo
+MapMatrix3D Editor/runData.db

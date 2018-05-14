@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2E12083C-943F-4D09-AF56-A791524A6D6D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mm3dEditModule</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\3rdParty\lib_mapMatrix3D\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MM3DEDITMODULE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;MM3DEDITMODULE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MM3DEDITMODULE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;MM3DEDITMODULE_EXPORTS;CLIPBYSCOPELIBDLL;CLIPLIBDLL;OSGCLIPBYHEIGHTLIBDLL;OSGFLATLIBDLL;FLATBYSCOPELIBDLL;RECOVERFLATBYSCOPELIBDLL;REPAIRLIBDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\3rdParty\OSG\include;..\..\3rdParty\opencv2_1\x64\include\opencv;..\osgFinder;..\AdditionalDependency;..\Algorithm;..\osgEditor;..\MFCDepends;..\CallBackFuncType;..\..\3rdParty\boost\include;..\sqliteDatabase;..\..\3rdParty\sqlite3\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\lib_mapMatrix3D;..\..\3rdParty\boost\lib;..\..\3rdParty\sqlite3\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>osg.lib;osgDB.lib;osgUtil.lib;highgui210.lib;cxcore210.lib;cv210.lib;Algorithm.lib;osgFinder.lib;osgEditor.lib;AdditionalDependency.lib;MFCDepends.lib;CallBackFuncType.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;sqliteDatabase.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChildPagedLodTraveller.h" />
+    <ClInclude Include="FileSelector.h" />
+    <ClInclude Include="FindTrans.h" />
+    <ClInclude Include="HeadPagedLodTraveller.h" />
+    <ClInclude Include="InterfaceCOsgClipByScope.h" />
+    <ClInclude Include="InterfaceOsgClip.h" />
+    <ClInclude Include="InterfaceOsgClipByHeight.h" />
+    <ClInclude Include="InterfaceOsgFlat.h" />
+    <ClInclude Include="InterfaceOsgFlatByScope.h" />
+    <ClInclude Include="InterfaceOsgRecoverFlatByScope.h" />
+    <ClInclude Include="InterfaceOsgRepair.h" />
+    <ClInclude Include="IsInAreaJudger.h" />
+    <ClInclude Include="LogShower.h" />
+    <ClInclude Include="MultiChildScopeGeoClipper.h" />
+    <ClInclude Include="MultiScopeAbsoluteHeadGeodeClipper.h" />
+    <ClInclude Include="MultiScopeAbsolutePagedLodClipper.h" />
+    <ClInclude Include="MultiScopeAccurateHeadGeodeClippper.h" />
+    <ClInclude Include="MultiScopeAccuratePagedLodClipper.h" />
+    <ClInclude Include="MultiScopeHeadGeodeClipper.h" />
+    <ClInclude Include="MultiScopeHeadGeodeFlatRecoverer.h" />
+    <ClInclude Include="MultiScopeHeadGeodeflatter.h" />
+    <ClInclude Include="MultiScopeHeadGeodeNormalizeFlatter.h" />
+    <ClInclude Include="MultiScopePagedLodClipper.h" />
+    <ClInclude Include="MultiScopePagedLodFlatRecoverer.h" />
+    <ClInclude Include="MultiScopePagedLodFlatter.h" />
+    <ClInclude Include="MultiScopePagedLodNormalizeFlatter.h" />
+    <ClInclude Include="ObtainSelTileFileName.h" />
+    <ClInclude Include="OsgAbsoluteHollowOutByPolygon.h" />
+    <ClInclude Include="OsgAccurateClipByPolygon.h" />
+    <ClInclude Include="OsgAccurateClipperByPolygon.h" />
+    <ClInclude Include="OsgAccurateClipperBySuspendScope.h" />
+    <ClInclude Include="OsgAccurateHollowOutByPolygon.h" />
+    <ClInclude Include="OsgAccurateHollowOutBySuspendScope.h" />
+    <ClInclude Include="osgClip.h" />
+    <ClInclude Include="osgClipByHeight.h" />
+    <ClInclude Include="OsgClipByPolygon.h" />
+    <ClInclude Include="osgClipByScope.h" />
+    <ClInclude Include="OsgClipBySupendScope.h" />
+    <ClInclude Include="OsgClipperAbsoluteHollowOutByPolygon.h" />
+    <ClInclude Include="OsgClipperByPolygon.h" />
+    <ClInclude Include="OsgClipperBySuspendScope.h" />
+    <ClInclude Include="OsgExtractByScope.h" />
+    <ClInclude Include="osgFlat.h" />
+    <ClInclude Include="OsgFlatByPolygon.h" />
+    <ClInclude Include="OsgFlatByScope.h" />
+    <ClInclude Include="OsgHollowOutByPolygon.h" />
+    <ClInclude Include="OsgNormalizeFlatSceneByPolygon.h" />
+    <ClInclude Include="OsgPagedLodOutputer.h" />
+    <ClInclude Include="OsgPagedLodReader.h" />
+    <ClInclude Include="OsgRecoverFlatByScope.h" />
+    <ClInclude Include="osgRepair.h" />
+    <ClInclude Include="PagedLodClipper.h" />
+    <ClInclude Include="SceneRepairor.h" />
+    <ClInclude Include="SqliteSaver.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChildPagedLodTraveller.cpp" />
+    <ClCompile Include="FileSelector.cpp" />
+    <ClCompile Include="FindTrans.cpp" />
+    <ClCompile Include="HeadPagedLodTraveller.cpp" />
+    <ClCompile Include="InterfaceCOsgClipByScope.cpp" />
+    <ClCompile Include="InterfaceOsgClip.cpp" />
+    <ClCompile Include="InterfaceOsgClipByHeight.cpp" />
+    <ClCompile Include="InterfaceOsgFlat.cpp" />
+    <ClCompile Include="InterfaceOsgFlatByScope.cpp" />
+    <ClCompile Include="InterfaceOsgRecoverFlatByScope.cpp" />
+    <ClCompile Include="InterfaceOsgRepair.cpp" />
+    <ClCompile Include="IsInAreaJudger.cpp" />
+    <ClCompile Include="LogShower.cpp" />
+    <ClCompile Include="MultiChildScopeGeoClipper.cpp" />
+    <ClCompile Include="MultiScopeAbsoluteHeadGeodeClipper.cpp" />
+    <ClCompile Include="MultiScopeAbsolutePagedLodClipper.cpp" />
+    <ClCompile Include="MultiScopeAccurateHeadGeodeClippper.cpp" />
+    <ClCompile Include="MultiScopeAccuratePagedLodClipper.cpp" />
+    <ClCompile Include="MultiScopeHeadGeodeClipper.cpp" />
+    <ClCompile Include="MultiScopeHeadGeodeFlatRecoverer.cpp" />
+    <ClCompile Include="MultiScopeHeadGeodeflatter.cpp" />
+    <ClCompile Include="MultiScopeHeadGeodeNormalizeFlatter.cpp" />
+    <ClCompile Include="MultiScopePagedLodClipper.cpp" />
+    <ClCompile Include="MultiScopePagedLodFlatRecoverer.cpp" />
+    <ClCompile Include="MultiScopePagedLodFlatter.cpp" />
+    <ClCompile Include="MultiScopePagedLodNormalizeFlatter.cpp" />
+    <ClCompile Include="ObtainSelTileFileName.cpp" />
+    <ClCompile Include="OsgAbsoluteHollowOutByPolygon.cpp" />
+    <ClCompile Include="OsgAccurateClipByPolygon.cpp" />
+    <ClCompile Include="OsgAccurateClipperByPolygon.cpp" />
+    <ClCompile Include="OsgAccurateClipperBySuspendScope.cpp" />
+    <ClCompile Include="OsgAccurateHollowOutByPolygon.cpp" />
+    <ClCompile Include="OsgAccurateHollowOutBySuspendScope.cpp" />
+    <ClCompile Include="osgClip.cpp" />
+    <ClCompile Include="osgClipByHeight.cpp" />
+    <ClCompile Include="OsgClipByPolygon.cpp" />
+    <ClCompile Include="osgClipByScope.cpp" />
+    <ClCompile Include="OsgClipBySupendScope.cpp" />
+    <ClCompile Include="OsgClipperAbsoluteHollowOutByPolygon.cpp" />
+    <ClCompile Include="OsgClipperByPolygon.cpp" />
+    <ClCompile Include="OsgClipperBySuspendScope.cpp" />
+    <ClCompile Include="OsgExtractByScope.cpp" />
+    <ClCompile Include="osgFlat.cpp" />
+    <ClCompile Include="OsgFlatByPolygon.cpp" />
+    <ClCompile Include="OsgFlatByScope.cpp" />
+    <ClCompile Include="OsgHollowOutByPolygon.cpp" />
+    <ClCompile Include="OsgNormalizeFlatSceneByPolygon.cpp" />
+    <ClCompile Include="OsgPagedLodOutputer.cpp" />
+    <ClCompile Include="OsgPagedLodReader.cpp" />
+    <ClCompile Include="OsgRecoverFlatByScope.cpp" />
+    <ClCompile Include="osgRepair.cpp" />
+    <ClCompile Include="SceneRepairor.cpp" />
+    <ClCompile Include="SqliteSaver.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

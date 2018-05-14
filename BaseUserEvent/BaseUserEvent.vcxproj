@@ -140,6 +140,9 @@
       <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\3rdParty\lib_mapMatrix3D\</AdditionalLibraryDirectories>
       <AdditionalDependencies>osg.lib;osgDB.lib;osgUtil.lib;osgText.lib;osgViewer.lib;osgGA.lib;AdditionalDependency.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

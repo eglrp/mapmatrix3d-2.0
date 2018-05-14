@@ -83,7 +83,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
     <EmbedManifest>true</EmbedManifest>
-    <OutDir>..\..\bin_mapMatrix3D\X64\Release\</OutDir>
+    <OutDir>..\..\3rdParty\lib_mapMatrix3D\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -200,6 +200,9 @@
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="osgMFCViewer.def" />

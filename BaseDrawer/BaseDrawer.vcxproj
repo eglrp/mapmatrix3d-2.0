@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\bin_mapMatrix3D\X64\Release\</OutDir>
+    <OutDir>..\..\3rdParty\lib_mapMatrix3D\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -139,9 +139,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\bin_mapMatrix3D\X64\Release\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\3rdParty\lib_mapMatrix3D</AdditionalLibraryDirectories>
       <AdditionalDependencies>osg.lib;osgDB.lib;osgUtil.lib;osgViewer.lib;AdditionalDependency.lib;osgManipulator.lib;mm3dOrientModule.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

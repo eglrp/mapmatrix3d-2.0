@@ -147,7 +147,8 @@
       <AdditionalDependencies>jsoncpp.lib;libpq.lib;gdal_dhj_win64_i.lib;BaseUserEvent.lib;AdditionalDependency.lib;osg.lib;osgDB.lib;osgUtil.lib;osgText.lib;osgViewer.lib;osgGA.lib;BaseDrawer.lib;CallBackFuncType.lib;osgFinder.lib;MFCDepends.lib;CV_Line.lib;cv210.lib;cxcore210.lib;highgui210.lib;osgManipulator.lib;Algorithm.lib;sqlite3.lib;sqliteDatabase.lib;mm3dMapModule.lib;mm3dMonoModule.lib;mm3dDrawEvent.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy ..\scripts ..\..\bin_Mapmatrix3D\X64\Release\scripts\ /s /Y</Command>
+      <Command>xcopy ..\scripts ..\..\bin_Mapmatrix3D\X64\Release\scripts\ /s /Y
+xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

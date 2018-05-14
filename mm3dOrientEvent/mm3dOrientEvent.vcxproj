@@ -145,6 +145,9 @@
       <AdditionalLibraryDirectories>..\..\3rdParty\sqlite3\lib;..\..\3rdParty\OSG\lib;..\..\3rdParty\lib_mapMatrix3D\;..\..\3rdParty\boost\lib;..\..\3rdParty\opencv2_1\x64\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>BaseUserEvent.lib;BaseDrawer.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;AdditionalDependency.lib;CallBackFuncType.lib;MFCDepends.lib;Algorithm.lib;osg.lib;osgDB.lib;osgUtil.lib;osgText.lib;osgViewer.lib;osgGA.lib;cxcore210.lib;cv210.lib;highgui210.lib;mm3dOrientModule.lib;mm3dMapModule.lib;sqliteDatabase.lib;sqlite3.lib;osgEditor.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

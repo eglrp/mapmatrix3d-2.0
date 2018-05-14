@@ -140,6 +140,9 @@
       <AdditionalLibraryDirectories>..\..\3rdParty\OSG\lib;..\..\3rdParty\lib_mapMatrix3D\;..\..\3rdParty\boost\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>osg.lib;osgDB.lib;osgGA.lib;osgUtil.lib;osgViewer.lib;OpenThreads.lib;MFCDepends.lib;CallBackFuncType.lib;boost_signals-vc120-mt-1_57.lib;boost_signals-vc120-mt-gd-1_57.lib;AdditionalDependency.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

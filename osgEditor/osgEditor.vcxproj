@@ -144,7 +144,7 @@
       <AdditionalDependencies>AdditionalDependency.lib;Algorithm.lib;osgFinder.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;cxcore210.lib;cv210.lib;highgui210.lib;CallBackFuncType.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\ /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -143,7 +143,7 @@
       <AdditionalDependencies>osg.lib;osgDB.lib;osgUtil.lib;osgViewer.lib;AdditionalDependency.lib;osgManipulator.lib;mm3dOrientModule.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\</Command>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\ /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

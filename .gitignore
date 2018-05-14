@@ -13,3 +13,4 @@ MapMatrix3D Editor.VC.VC.opendb
 MFCDepends/x64/Release/MFCDepends.res
 osgMFCViewer/x64/Release/osgMFCViewer.res
 .vs/MapMatrix3D Editor/v14/.suo
+MapMatrix3D Editor/runData.db

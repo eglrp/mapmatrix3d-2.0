@@ -97,7 +97,7 @@ void COsgEditEvent::HollowOutByPolygon(std::string inFilePath)
 {
 	for (int i = 0; i < vecEditEvent.size(); i++)
 	{
-		COsgHollowOutByPolygonEvent* hollowOutByPolygonEvent = (COsgHollowOutByPolygonEvent*)vecEditEvent[i];
+		COsgHollowOutByPolygonEvent* hollowOutByPolygonEvent = dynamic_cast<COsgHollowOutByPolygonEvent*>(vecEditEvent[i]);
 
 		if (hollowOutByPolygonEvent)
 		{
@@ -111,7 +111,7 @@ void COsgEditEvent::HollowOutSuspend(std::string inFilePath)
 {
 	for (int i = 0; i < vecEditEvent.size(); i++)
 	{
-		COsgHollowOutSuspendEvent* hollowOutSuspendEvent = (COsgHollowOutSuspendEvent*)vecEditEvent[i];
+		COsgHollowOutSuspendEvent* hollowOutSuspendEvent = dynamic_cast<COsgHollowOutSuspendEvent*>(vecEditEvent[i]);
 
 		if (hollowOutSuspendEvent)
 		{

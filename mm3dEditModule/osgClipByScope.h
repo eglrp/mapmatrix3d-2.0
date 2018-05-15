@@ -10,7 +10,7 @@ class COsgClipByScope : public InterfaceCOsgClipByScope
 {
 public:
 	virtual bool hollowOutByScope(osg::ref_ptr<osg::Node> sceneNode, std::string inFilePath, std::vector<CScope> vecClipScope, bool isInside, 
-		InterfaceSigEventCallBack* iSigEventCallBack);
+		InterfaceSigEventCallBack* iSigEventCallBack, bool filePathCheck = true);
 
 protected:
 	virtual void showHintClipping(InterfaceSigEventCallBack* iSigEventCallBack) = 0;

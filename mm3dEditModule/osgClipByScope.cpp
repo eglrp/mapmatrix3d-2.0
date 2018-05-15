@@ -10,7 +10,7 @@
 #include "InterfaceOsgClip.h"
 #include "InterfaceOsgEditor.h"
 
-bool COsgClipByScope::hollowOutByScope(osg::ref_ptr<osg::Node> sceneNode, std::string inFilePath, std::vector<CScope> vecClipScope, bool isInside, InterfaceSigEventCallBack* iSigEventCallBack)
+bool COsgClipByScope::hollowOutByScope(osg::ref_ptr<osg::Node> sceneNode, std::string inFilePath, std::vector<CScope> vecClipScope, bool isInside, InterfaceSigEventCallBack* iSigEventCallBack, bool filePathCheck)
 {
 	//Ñ¡ÔñÂ·¾¶
 	bool isSuccess = fileSelector.selectDir();
@@ -25,7 +25,7 @@ bool COsgClipByScope::hollowOutByScope(osg::ref_ptr<osg::Node> sceneNode, std::s
 	int pos = headOutputFileName.rfind('\\');
 	std::string headOutputFilePath = headOutputFileName.substr(0, pos);
 
-	if (fileSelector.isSameAsOutputFileName(inFilePath, headOutputFileName) == true)
+	if (filePathCheck && fileSelector.isSameAsOutputFileName(inFilePath, headOutputFileName) == true)
 	{
 		return false;
 	}
@@ -64,7 +64,7 @@ bool COsgClipByScope::hollowOutByScope(osg::ref_ptr<osg::Node> sceneNode, std::s
 }
 
 
-void COsgClipByScope::startClipModelByScope(std::vector<osg::MatrixTransform*> vecTrans, std::string headOutputFilePath, std::string inFilePath, 
+void COsgClipByScope::startClipModelByScope(std::vector<osg::MatrixTransform*> vecTrans, std::string headOutputFilePath, std::string inFilePath,
 	std::vector<CScope> vecClipScope, CStProgressSetter stProgressSetter, bool isInside)
 {
 	for (int i = 0; i < vecTrans.size(); i++)

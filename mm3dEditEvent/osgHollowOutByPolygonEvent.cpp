@@ -17,7 +17,7 @@ bool COsgHollowOutByPolygonEvent::StartHollowOutByPolygon(osg::ref_ptr<osg::Node
 	//按范围挖空
 	InterfaceCOsgClipByScopeFactory iOsgClipByScopeFactory;
 	InterfaceCOsgClipByScope* iOsgClipByScope = iOsgClipByScopeFactory.create(ACCURATE_HOLLOW_OUT_BY_POLYGON_1);
-	bool isSuccess = iOsgClipByScope->hollowOutByScope(sceneNode, inFilePath, vecClipScope, false, iSigEventCallBack);
+	bool isSuccess = iOsgClipByScope->hollowOutByScope(sceneNode, inFilePath, vecClipScope, false, iSigEventCallBack, false);
 
 	if (isSuccess)
 	{
@@ -30,7 +30,7 @@ bool COsgHollowOutByPolygonEvent::StartHollowOutByPolygon(osg::ref_ptr<osg::Node
 
 void COsgHollowOutByPolygonEvent::UpdateActivatedStatus(std::vector<OperatingState> vecOpState)
 {
-	bool flag = false; 
+	bool flag = false;
 
 	if (isActivated == true)
 	{
@@ -39,7 +39,7 @@ void COsgHollowOutByPolygonEvent::UpdateActivatedStatus(std::vector<OperatingSta
 
 	isActivated = isActivate(vecOpState, OPS_HOLLOW_OUT);
 
-	if (isActivated == false && flag == true)																	
+	if (isActivated == false && flag == true)
 	{
 		//消息置空
 		iSigEventCallBack->EmitSigShowOpsHint("");
@@ -84,7 +84,7 @@ bool COsgHollowOutByPolygonEvent::handle(const osgGA::GUIEventAdapter &ea, osgGA
 			//开始新的画闭合线
 			vecWorldCoord.clear();
 		}
-		else if(IsKeyPress(ea))
+		else if (IsKeyPress(ea))
 		{
 			if (ea.getKey() == osgGA::GUIEventAdapter::KEY_BackSpace)					 //BackSpace
 			{
@@ -105,7 +105,7 @@ bool COsgHollowOutByPolygonEvent::handle(const osgGA::GUIEventAdapter &ea, osgGA
 	}
 	else
 	{
-		
+
 	}
 
 	return false;

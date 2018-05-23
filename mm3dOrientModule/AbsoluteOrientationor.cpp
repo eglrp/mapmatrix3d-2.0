@@ -51,17 +51,17 @@ void CAbsoluteOrientationor::LoadControlPoint(std::string fileName)
 		char str[30];
 		fscanf(fpCtrlPt, "%s %lf %lf %lf\n", &str, &ptX, &ptY, &ptZ);
 		
-		for (int i = 0;i<30;i++)
-		{
-			if (isalpha(str[i]))
+		/*	for (int i = 0;i<30;i++)
 			{
-				InterfaceMFCExcuteFactory IExcuteFactory;
-				InterfaceMFCExcute* IExcute = IExcuteFactory.create();
-				IExcute->PopUpMessage("控制点编号仅支持数字，请修改");
-				vecCtrlPt.clear();
-				return;
-			}
-		}
+				if (isalpha(str[i]))
+				{
+					InterfaceMFCExcuteFactory IExcuteFactory;
+					InterfaceMFCExcute* IExcute = IExcuteFactory.create();
+					IExcute->PopUpMessage("控制点编号仅支持数字，请修改");
+					vecCtrlPt.clear();
+					return;
+				}
+			}*/
 		ptNum = atoi(str);
 		vecCtrlPt.push_back(CControlPoint(ptNum, ptX, ptY, ptZ, FALSE));
 	}

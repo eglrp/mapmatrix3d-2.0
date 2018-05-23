@@ -965,10 +965,6 @@ bool CSceneDomGenerator::ProduceRectDom(osg::ref_ptr<osg::MatrixTransform> mTran
 	}
 
 	osg::Matrix matrix = mTrans->getMatrix();
-	osg::Vec3d xyzMove = matrix.getTrans();
-	double xMove = xyzMove.x();
-	double yMove = xyzMove.y();
-	double zMove = xyzMove.z();
 	double rectLeft = rectNode[0].x;
 	double rectRight = rectNode[1].x;
 	double rectBottom = rectNode[0].y;
@@ -1002,32 +998,32 @@ bool CSceneDomGenerator::ProduceRectDom(osg::ref_ptr<osg::MatrixTransform> mTran
 				//计算细分块的范围
 				int newWidth, newHeight;
 				double newRectLeft, newRectRight, newRectBottom, newRectTop;
-				double newRectZnear = znear - zMove;
-				double newRectZfar = zfar - zMove;
+				double newRectZnear = znear;
+				double newRectZfar = zfar;
 
 				if (j == xNum)
 				{
-					newRectLeft = rectLeft - xMove + xNum * ScreenWidth * res;
-					newRectRight = rectRight - xMove;
+					newRectLeft = rectLeft + xNum * ScreenWidth * res;
+					newRectRight = rectRight;
 					newWidth = (newRectRight - newRectLeft) / res;
 				}
 				else
 				{
-					newRectLeft = rectLeft - xMove + j * ScreenWidth * res;
-					newRectRight = rectLeft - xMove + (j + 1) * ScreenWidth * res;
+					newRectLeft = rectLeft + j * ScreenWidth * res;
+					newRectRight = rectLeft + (j + 1) * ScreenWidth * res;
 					newWidth = ScreenWidth;
 				}
 
 				if (i == yNum)
 				{
-					newRectBottom = rectBottom - yMove + yNum * ScreenHeight * res;
-					newRectTop = rectTop - yMove;
+					newRectBottom = rectBottom + yNum * ScreenHeight * res;
+					newRectTop = rectTop;
 					newHeight = (newRectTop - newRectBottom) / res;
 				}
 				else
 				{
-					newRectBottom = rectBottom - yMove + i * ScreenHeight * res;
-					newRectTop = rectBottom - yMove + (i + 1) * ScreenHeight * res;
+					newRectBottom = rectBottom + i * ScreenHeight * res;
+					newRectTop = rectBottom + (i + 1) * ScreenHeight * res;
 					newHeight = ScreenHeight;
 				}
 
@@ -1048,7 +1044,7 @@ bool CSceneDomGenerator::ProduceRectDom(osg::ref_ptr<osg::MatrixTransform> mTran
 
 		for (int i = 0; i < vecSplitImgFileName.size(); i++)
 		{
-			combineImage(imgMat, vecSplitImgFileName[i], vecCoordRect[i], osg::Vec4d(rectLeft - xMove, rectRight - xMove, rectBottom - yMove, rectTop - yMove));
+			combineImage(imgMat, vecSplitImgFileName[i], vecCoordRect[i], osg::Vec4d(rectLeft, rectRight, rectBottom, rectTop));
 
 			IMFCExecute->RemoveFile(vecSplitImgFileName[i]);
 			IMFCExecute->RemoveFile(vecSplitCoordFileName[i]);
@@ -1060,8 +1056,8 @@ bool CSceneDomGenerator::ProduceRectDom(osg::ref_ptr<osg::MatrixTransform> mTran
 	}
 	else
 	{
-		bool isSuccess = produceScreenDOM(mTrans, width, height, rectLeft - xMove, rectRight - xMove, rectBottom - yMove, rectTop - yMove, znear - zMove, 
-			zfar - zMove, outRectDomFileName);
+		bool isSuccess = produceScreenDOM(mTrans, width, height, rectLeft, rectRight, rectBottom, rectTop, znear, 
+			zfar, outRectDomFileName);
 
 		if (!isSuccess)
 		{
@@ -1095,9 +1091,11 @@ bool CSceneDomGenerator::produceScreenDOM(osg::ref_ptr<osg::MatrixTransform> nod
 	camera->setClearMask(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	camera->setViewport(0, 0, newWidth, newHeight);
 
-	char strMsg[MAX_PATH];
-	sprintf_s(strMsg, "left %lf right %lf bottom %lf top %lf near %lf far %lf\n", newRectLeft, newRectRight, newRectBottom, newRectTop, newRectZnear, newRectZfar);
-	_logop(strMsg);
+	osg::Vec3d eye(0, 0, newRectZfar + 1);
+	osg::Vec3d up(0, 1, 0);
+	osg::Vec3d center(0, 0, newRectZnear);
+	camera->setViewMatrixAsLookAt(eye, center, up);
+
 
 	camera->setProjectionMatrixAsOrtho(newRectLeft, newRectRight, newRectBottom, newRectTop, newRectZnear, newRectZfar);			//计算正射投影范围
 	

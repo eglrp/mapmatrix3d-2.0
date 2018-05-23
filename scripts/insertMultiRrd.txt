@@ -1,0 +1,2 @@
+
+INSERT INTO param_table_name (ID,tileName,V1_X,V1_Y,V1_Z,V2_X,V2_Y,V2_Z,V3_X,V3_Y,V3_Z,normX,normY,normZ,geom) VALUES param_insert_value;

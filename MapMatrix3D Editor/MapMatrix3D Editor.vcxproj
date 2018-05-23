@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B4453FCB-4CF0-4423-9BBC-6BAB3EAC126D}</ProjectGuid>
+    <RootNamespace>MapMatrix3DEditor</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <EmbedManifest>false</EmbedManifest>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutDir>..\..\bin_mapMatrix3D\X64\Release\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\OSG\include;..\opencv2_1\x64\include\opencv;..\cminpack;..\lib\include;..\lib\sba-1.5;..\lib\matrix;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\OSG\lib;..\opencv2_1\x64\lib;..\lib%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CheckModule.lib;OpenThreads.lib;osg.lib;osgAnimation.lib;osgDB.lib;osgFX.lib;osgGA.lib;osgManipulator.lib;osgParticle.lib;osgPresentation.lib;osgShadow.lib;osgSim.lib;osgTerrain.lib;osgText.lib;osgUtil.lib;osgViewer.lib;osgVolume.lib;osgWidget.lib;cxcore210.lib;cv210.lib;highgui210.lib;glew32s.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\OSG\include;..\opencv2_1\x64\include\opencv;..\cminpack;..\lib\include;..\lib\sba-1.5;..\lib\matrix;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\OSG\lib;..\opencv2_1\x64\lib;..\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenThreads.lib;osg.lib;osgAnimation.lib;osgDB.lib;osgFX.lib;osgGA.lib;osgManipulator.lib;osgParticle.lib;osgPresentation.lib;osgShadow.lib;osgSim.lib;osgTerrain.lib;osgText.lib;osgUtil.lib;osgViewer.lib;osgVolume.lib;osgWidget.lib;cxcore210.lib;cv210.lib;highgui210.lib;cblas.lib;clapack.lib;f2c.lib;imagelib.lib;matrix.lib;sba-1.5.lib;</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ENCRYPTLIBDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\3rdParty\OSG\include;..\..\3rdParty\opencv2_1\x64\include\opencv;..\..\3rdParty\otherDependency\include;..\..\3rdParty\otherDependency\lib\sba-1.5;..\..\3rdParty\otherDependency\matrix;..\..\3rdParty\gdal\include;..\Algorithm;..\AdditionalDependency;..\osgMFCViewer;..\osgFinder;..\osgEditor;..\MFCDepends;..\CallBackFuncType;..\..\3rdParty\boost\include;..\Compass;..\BaseUserEvent;..\osgMultiFileLinkCreator;..\mm3dEditEvent;..\mm3dMapperEvent;..\mm3dMonomerEvent;..\mm3dOrientEvent;..\mm3dOrientModule;..\mm3dProductModule;..\..\3rdParty\postgre\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\otherDependency;..\..\3rdParty\OSG\lib;..\..\3rdParty\gdal\lib;..\..\3rdParty\lib_mapMatrix3D;..\..\3rdParty\boost\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgText.lib;osgManipulator.lib;osgUtil.lib;osgViewer.lib;cxcore210.lib;cv210.lib;highgui210.lib;matrix.lib;sba-1.5.lib;glew32s.lib;glu32.lib;opengl32.lib;gdal_dhj_win64_i.lib;Compass.lib;Algorithm.lib;AdditionalDependency.lib;osgMFCViewer.lib;osgFinder.lib;osgEditor.lib;MFCDepends.lib;CallBackFuncType.lib;osgMultiFileLinkCreator.lib;Encrypt.lib;mm3dEditEvent.lib;mm3dOrientEvent.lib;mm3dMonomerEvent.lib;mm3dMapperEvent.lib;mm3dOrientModule.lib;mm3dProductModule.lib</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="C:\Users\sulq\Desktop\切图\startIcons.png" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
+    <None Include="ClassDiagram5.cd" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\1.bmp" />
+    <None Include="res\1.ico" />
+    <None Include="res\12.bmp" />
+    <None Include="res\13.bmp" />
+    <None Include="res\14.bmp" />
+    <None Include="res\15.bmp" />
+    <None Include="res\17.bmp" />
+    <None Include="res\back1.bmp" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bitmap4.bmp" />
+    <None Include="res\bitmap5.bmp" />
+    <None Include="res\bitmap6.bmp" />
+    <None Include="res\buttons.bmp" />
+    <None Include="res\editIcons.png" />
+    <None Include="res\filelarge.bmp" />
+    <None Include="res\filesmall.bmp" />
+    <None Include="res\ICON.png" />
+    <None Include="res\icons.png" />
+    <None Include="res\logo1.bmp" />
+    <None Include="res\main.bmp" />
+    <None Include="res\MapMatrix3D Editor.ico" />
+    <None Include="res\MapMatrix3D EditorDoc.ico" />
+    <None Include="res\MapMatrix3DEditor.rc2" />
+    <None Include="res\measureIcons.png" />
+    <None Include="res\mfcribbon-ms00001.mfcribbon-ms">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="res\nav_large.bmp" />
+    <None Include="res\nav_large_hc.bmp" />
+    <None Include="res\newicons-16.bmp" />
+    <None Include="res\newicons-32.bmp" />
+    <None Include="res\orientIcons.png" />
+    <None Include="res\output_wnd.ico" />
+    <None Include="res\output_wnd_hc.ico" />
+    <None Include="res\pages.bmp" />
+    <None Include="res\pages_hc.bmp" />
+    <None Include="res\pages_small.bmp" />
+    <None Include="res\pages_small_hc.bmp" />
+    <None Include="res\png1.png" />
+    <None Include="res\productIcons.png" />
+    <None Include="res\ribbon.mfcribbon-ms">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="res\ribbon1.mfcribbon-ms" />
+    <None Include="res\ribbon2.mfcribbon-ms" />
+    <None Include="res\showIcons.png" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="res\writelarge.bmp" />
+    <None Include="res\writesmall.bmp" />
+    <None Include="res\加载.bmp" />
+    <None Include="res\启动界面-1.bmp" />
+    <None Include="res\启动界面-1.jpg" />
+    <None Include="res\启动界面-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AbsoluteOrientationDlg.h" />
+    <ClInclude Include="CalendarBar.h" />
+    <ClInclude Include="CallBackFunc.h" />
+    <ClInclude Include="ChildDomFrm.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="DLGHatchSetting.h" />
+    <ClInclude Include="DlgSetContour.h" />
+    <ClInclude Include="DOMResSetDlg.h" />
+    <ClInclude Include="DynamicEdit.h" />
+    <ClInclude Include="DynamicListCtrl.h" />
+    <ClInclude Include="FileView.h" />
+    <ClInclude Include="HeightSetDlg.h" />
+    <ClInclude Include="InterfaceCEncrypt.h" />
+    <ClInclude Include="KofMFCControlRenderer.h" />
+    <ClInclude Include="KofMfcOutlookBarPane.h" />
+    <ClInclude Include="KofMFCRibbonApplicationButton.h" />
+    <ClInclude Include="KofMFCRibbonBar.h" />
+    <ClInclude Include="KofMfcRibbonBaseElement.h" />
+    <ClInclude Include="KofMFCToolBarMenuButton.h" />
+    <ClInclude Include="KofMFCVisualManagerBitmapCacheItem.h" />
+    <ClInclude Include="KofRibbonButton.h" />
+    <ClInclude Include="KofRibbonCategory.h" />
+    <ClInclude Include="KofRibbonCategoryScrool.h" />
+    <ClInclude Include="KofRibbonPanel.h" />
+    <ClInclude Include="KofRibbonProgressBar.h" />
+    <ClInclude Include="KofRibbonQuickAccessToolBar.h" />
+    <ClInclude Include="KofRibbonTab.h" />
+    <ClInclude Include="KofToolBarImage.h" />
+    <ClInclude Include="KofVisualManager.h" />
+    <ClInclude Include="KofVisualManagerOffice2007.h" />
+    <ClInclude Include="LookUpObjectPropertyDlg.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MapMatrix3D Editor.h" />
+    <ClInclude Include="MapMatrix3D EditorDoc.h" />
+    <ClInclude Include="MapMatrix3D EditorView.h" />
+    <ClInclude Include="MeasureResultDlg.h" />
+    <ClInclude Include="OPStatusBar.h" />
+    <ClInclude Include="OutputWnd.h" />
+    <ClInclude Include="ProgressBar.h" />
+    <ClInclude Include="PropertyListDlg.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="RibbonCaptionButton.h" />
+    <ClInclude Include="SetPtCloudDlg.h" />
+    <ClInclude Include="SplashWnd.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TypeInputListCtrl.h" />
+    <ClInclude Include="ViewTree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AbsoluteOrientationDlg.cpp" />
+    <ClCompile Include="CalendarBar.cpp" />
+    <ClCompile Include="CallBackFunc.cpp" />
+    <ClCompile Include="ChildDomFrm.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="DLGHatchSetting.cpp" />
+    <ClCompile Include="DlgSetContour.cpp" />
+    <ClCompile Include="DOMResSetDlg.cpp" />
+    <ClCompile Include="DynamicEdit.cpp" />
+    <ClCompile Include="DynamicListCtrl.cpp" />
+    <ClCompile Include="FileView.cpp" />
+    <ClCompile Include="HeightSetDlg.cpp" />
+    <ClCompile Include="KofMFCControlRenderer.cpp" />
+    <ClCompile Include="KofMfcOutlookBarPane.cpp" />
+    <ClCompile Include="KofMFCRibbonApplicationButton.cpp" />
+    <ClCompile Include="KofMFCRibbonBar.cpp" />
+    <ClCompile Include="KofMfcRibbonBaseElement.cpp" />
+    <ClCompile Include="KofMFCToolBarMenuButton.cpp" />
+    <ClCompile Include="KofMFCVisualManagerBitmapCacheItem.cpp" />
+    <ClCompile Include="KofRibbonButton.cpp" />
+    <ClCompile Include="KofRibbonCategory.cpp" />
+    <ClCompile Include="KofRibbonCategoryScrool.cpp" />
+    <ClCompile Include="KofRibbonPanel.cpp" />
+    <ClCompile Include="KofRibbonProgressBar.cpp" />
+    <ClCompile Include="KofRibbonQuickAccessToolBar.cpp" />
+    <ClCompile Include="KofRibbonTab.cpp" />
+    <ClCompile Include="KofToolBarImage.cpp" />
+    <ClCompile Include="KofVisualManager.cpp" />
+    <ClCompile Include="KofVisualManagerOffice2007.cpp" />
+    <ClCompile Include="LookUpObjectPropertyDlg.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MapMatrix3D Editor.cpp" />
+    <ClCompile Include="MapMatrix3D EditorDoc.cpp" />
+    <ClCompile Include="MapMatrix3D EditorView.cpp" />
+    <ClCompile Include="MeasureResultDlg.cpp" />
+    <ClCompile Include="OPStatusBar.cpp" />
+    <ClCompile Include="OutputWnd.cpp" />
+    <ClCompile Include="ProgressBar.cpp" />
+    <ClCompile Include="PropertyListDlg.cpp" />
+    <ClCompile Include="RibbonCaptionButton.cpp" />
+    <ClCompile Include="SetPtCloudDlg.cpp" />
+    <ClCompile Include="SplashWnd.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TypeInputListCtrl.cpp" />
+    <ClCompile Include="ViewTree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MapMatrix3D Editor.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="MapMatrix3D Editor.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

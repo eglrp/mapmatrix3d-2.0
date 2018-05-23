@@ -1,0 +1,116 @@
+CREATE OR REPLACE FUNCTION testvectorangleinerror(
+    x1 double precision,
+    y1 double precision,
+    z1 double precision,
+    x2 double precision,
+    y2 double precision,
+    z2 double precision,
+    e double precision)
+  RETURNS boolean AS
+$BODY$
+    t1 = Math.sqrt(x1*x1 + y1*y1 + z1*z1);
+    t2 = Math.sqrt(x2*x2 + y2*y2 + z2*z2);
+    if(t1*t2 == 0)
+	return false;
+    ji = x1*x2 + y1*y2 + z1*z2;
+    ang = Math.acos(ji / (t1 * t2));
+    ang = ang * 180 / Math.PI;
+    if(ang > 90)
+	ang = 180 - ang;
+    if(ang>e)
+	return false;
+    else
+	return true;
+	
+	$BODY$
+ LANGUAGE plv8 VOLATILE
+  COST 100;
+ALTER FUNCTION testvectorangleinerror(double precision, double precision, double precision, double precision, double precision, double precision, double precision)
+  OWNER TO postgres;
+	
+CREATE OR REPLACE FUNCTION testvectorangle(
+    x1 double precision,
+    y1 double precision,
+    z1 double precision,
+    x2 numeric,
+    y2 numeric,
+    z2 numeric,
+    e double precision)
+    RETURNS boolean AS
+	$BODY$
+	DECLARE 
+		t1 double precision;
+		t2 double precision;
+		ji double precision;
+		ang double precision;
+	BEGIN
+		t1 = sqrt(x1*x1 + y1*y1 + z1*z1);
+		t2 = sqrt(x2*x2 + y2*y2 + z2*z2);
+		ji = x1*x2 + y1*y2 + z1*z2;
+		ang = acos(ji / (t1 * t2));
+		ang = ang * 180 / 3.1415926;
+
+		if ang > 90
+			then ang = 180 - ang;
+		end if;
+		if ang >= 90 - e then return true;
+		end if;
+		if ang < 90 - e then return false;
+		end if;
+	END;
+	$BODY$
+	LANGUAGE plpgsql VOLATILE
+	COST 100;
+	ALTER FUNCTION testvectorangle(double precision, double precision, double precision, numeric, numeric, numeric, double precision)
+	OWNER TO postgres;
+
+CREATE OR REPLACE FUNCTION distance3d(
+    x1 double precision,
+    y1 double precision,
+    z1 double precision,
+    x2 double precision,
+    y2 double precision,
+    z2 double precision)
+    RETURNS double precision AS
+	$$
+	var dis = Math.pow(x1 - x2,2) + Math.pow(y1 - y2,2) + Math.pow(z1 - z2,2);
+	
+	return Math.sqrt(dis);
+	$$LANGUAGE plv8 VOLATILE;
+	
+	
+CREATE OR REPLACE FUNCTION testgeometryintersect(
+    x double precision,
+    y double precision,
+    r double precision,
+    polygon geometry)
+  RETURNS boolean AS
+$BODY$
+ DECLARE 
+	x1 double precision;
+	y1 double precision;
+	x2 double precision;
+	y2 double precision;
+	x3 double precision;
+	y3 double precision;
+	x4 double precision;
+	y4 double precision;
+	t text;
+BEGIN
+x1 = x - r;
+y1 = y + r;
+x2 = x + r;
+y2 = y + r;
+x3 = x + r;
+y3 = y - r;
+x4 = x - r;
+y4 = y - r;
+
+t = 'polygon((' || cast(x1 as text)||' '|| cast(y1 as text)||','||cast(x2 as text)||' '|| cast(y2 as text)||','||cast(x3 as text)||' '|| cast(y3 as text)||','||cast(x4 as text)|| ' ' ||cast(y4 as text)||','||cast(x1 as text)||' '|| cast(y1 as text)||'))';
+return st_intersects(polygon,st_geomfromtext(t));
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+ALTER FUNCTION testgeometryintersect(double precision, double precision, double precision, geometry)
+  OWNER TO postgres;

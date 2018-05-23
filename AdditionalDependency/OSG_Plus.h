@@ -1,0 +1,45 @@
+#pragma once
+#include <osg/Point>
+#include <osg/Geode>
+#include <osg/Group>
+#include <osg/ShapeDrawable>
+#include <osg/Scissor>
+#include <osg/NodeVisitor>
+#include <osg/ClipNode>
+#include <osg/ClipPlane>
+#include <osg/BlendFunc>
+#include <osg/PolygonStipple>
+#include <osg/BlendColor>
+#include <osg/LineWidth>
+#include <osg/LineStipple>
+#include <osgDB/WriteFile>
+#include <osgDB/ReadFile>
+#include <osgDB/Registry>
+#include <osgText/Text3D>
+#include <osg/TexGen>
+#include <osgUtil/DelaunayTriangulator>
+#include <osg/MatrixTransform>
+#include <osgViewer/Viewer>
+#include <osg/PolygonMode>
+#include <osg/PolygonOffset>
+#include <osgGA/GUIEventAdapter>
+#include <osg/ClipNode>
+#include <osg/NodeVisitor>
+#include <osgText/Text>
+#include <osg/Material>
+#include <osg/Camera>
+#include <osgViewer/Viewer>
+#include <osgViewer/ViewerEventHandlers>
+#include <osgViewer/api/win32/GraphicsWindowWin32>
+#include <osgGA/TrackballManipulator>
+#include <osgGA/KeySwitchMatrixManipulator>
+#include <osgGA/TerrainManipulator>
+#include <osgGA/StateSetManipulator>
+#include <osgDB/DatabasePager>
+#include <osgDB/Registry>
+#include <osgDB/ReadFile>
+#include <osgDB/WriteFile>
+#include <osgUtil/Optimizer>
+
+
+

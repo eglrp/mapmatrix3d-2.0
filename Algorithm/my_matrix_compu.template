@@ -1,0 +1,237 @@
+#include "my_matrix_compu.hpp"
+
+//#ifndef DETMAXCOL
+//#define DETMAXCOL 128//注意栈的大小有限，如果递归深度大，这个值就要改小
+//#endif
+
+
+//矩阵数乘
+template<class T>
+void KfactorMatrix(T* M, int m, int n, T k, T* kM)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			kM[i * n + j] = k * M[i * n + j];
+		}
+	}
+}
+
+//矩阵加法
+template<class T>
+void AddMatrix(T* M1, T* M2, int m, int n, T* sumM)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			sumM[i * n + j] = M1[i * n + j] + M2[i * n + j];
+		}
+	}
+}
+
+//矩阵乘法
+template<class T>
+void MatrixMuti1D(T* A1, int m1, int n1, T* A2, int m2, int n2, T* A3)
+{
+	if (n1 != m2)
+	{
+		cout<<"error!!"<<endl;
+		return;
+	}
+	T temp = (T)0;
+	for (int i = 0; i < m1; i++)
+	{
+		for (int j = 0; j < n2; j++)
+		{
+			int index = i * n2 + j;
+			for (int k = 0; k < n1; k++)
+			{
+				temp += A1[i * n1 + k] * A2[k * n2 + j];
+			}
+			A3[index] = temp;
+			temp = (T)0;
+		}
+	}
+}
+
+//m1行n1列 X m2行n2列
+template<class T>
+void MatrixMuti2D(T** a, int m1, int n1, T** b, int m2, int n2, T** c)
+{
+	if (n1 != m2)
+	{
+		cout<<"The row or col is error !"<<endl;
+		return;
+	}
+	T** pa = new T*[m1];
+	for (int i = 0; i < m1; i++)
+	{
+		pa[i] = new T[n1];
+	}
+	for (int i = 0; i < m1; i++)
+	{
+		for (int j = 0; j < n1; j++)
+		{
+			pa[i][j] = a[i][j];
+		}
+	}
+
+	T temp = 0;
+	for (int i = 0; i < m1; i++)
+	{
+		for (int j = 0; j < n2; j++)
+		{
+			for (int k = 0; k < n1; k++)
+			{
+				temp += a[i][k] * b[k][j];
+			}
+			c[i][j] = temp;
+			temp = 0;
+		}
+	}
+}
+
+//打印矩阵
+template<class T>
+void PrintMatrix(T* M, int m, int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout<<M[i * n + j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+}
+
+//返回矩阵对应坐标为ij的行列式的余子式矩阵(非代数余子式)，只有方阵行列式才有余子式，n为方阵的行数（列数）
+template<class T>
+void MofDetofMatrix(T* M, int n, int i, int j, T* Mij)
+{
+	int index = 0;
+	for (int y = 0; y < n; y++)
+	{
+		if (y == i)
+		{
+			continue;
+		}
+		for (int x = 0; x < n; x++)
+		{
+			if (x == j)
+			{
+				continue;
+			}
+			Mij[index] = M[y * n + x];
+			index++;
+		}
+	}			
+}
+
+//计算矩阵行列式的值，按第一列展开，n为矩阵行数（列数）
+template<class T>
+T DetValueofMatrix(int n, T* M)
+{
+	if (n == 1)
+	{
+		return M[0];
+	}
+
+	T sum = (T)0;//无类型也可以初始化为0
+	int coef;
+	//T Mij[DETMAXCOL * DETMAXCOL];用栈数组的情况
+	T* Mij = new T[(n - 1) * (n - 1)];
+
+	for (int i = 0; i < n; i++)
+	{
+		//求出余子式的矩阵
+		int index = 0;
+		for (int j = 0; j < n; j++)
+		{
+			if (j == i)
+			{
+				continue;
+			}
+			for (int k = 1; k <= n - 1; k++)
+			{
+				Mij[index] = M[j * n + k];
+				index++;
+			}
+		}
+
+		if(i % 2 == 0){                  /*i+j（此时j=0，故只考虑i）为偶数，加法预算*/
+			coef = 1;
+		}
+		else{                           /*i+j为奇数，减法运算*/
+			coef = -1;
+		}
+		sum += coef * M[i * n] * DetValueofMatrix(n - 1, Mij);
+	}
+	delete []Mij;
+	return sum;
+}
+
+//求矩阵的伴随矩阵
+template<class T>
+void AdjointMatrix(T* M, int n, T* AM)
+{
+	int coef;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			T* Mji = new T[(n - 1) * (n - 1)];
+			MofDetofMatrix(M, n, j, i, Mji);
+			if((j + i) % 2 == 0){  
+				coef = 1;
+			}
+			else{   
+				coef = -1;
+			}
+			AM[i * n + j] = coef * DetValueofMatrix(n - 1, Mji);
+			delete []Mji;
+		}
+	}
+}
+
+//矩阵的转置
+template<class T>
+void TransposeMatrix(T* M, int m, int n, T* TM)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			TM[i * m + j] = M[j * n + i];
+		}
+	}	
+}
+
+//矩阵的逆矩阵
+template<class T>
+void InverseMatrix(T* M, int n, T* IM)
+{
+	T* AM = new T[n * n];
+	AdjointMatrix(M, n, AM);
+	T der = DetValueofMatrix(n, M);
+	der = (T)1 / der;//注意不要忘了强制转换类型同步
+	KfactorMatrix(AM, n, n, der, IM);
+	delete []AM;
+}
+
+//矩阵归一化
+template<class T>
+void NormMat(T* m, int r, int c)
+{
+	int size = r * c;
+	for (int i = 0; i < r; ++i)
+	{
+		for (int j = 0; j < c; ++j)
+		{
+			m[i * c + j] /= m[size - 1];
+		}
+	}
+}

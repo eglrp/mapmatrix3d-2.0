@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -22,6 +22,7 @@
     <ProjectGuid>{286C0983-5F11-45E9-BB02-D134C1E45642}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>AdditionalDependency</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,6 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\3rdParty\lib_mapMatrix3D\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -136,8 +138,11 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>cxcore210.lib;cv210.lib;highgui210.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgGA.lib;osgManipulator.lib;osgViewer.lib;osgUtil.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\OSG\lib;..\x64\Release</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\3rdParty\opencv2_1\x64\lib;..\..\3rdParty\OSG\lib;..\..\3rdParty\lib_mapMatrix3D</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy $(OutDir)$(TargetFileName) $(OutDir)..\..\bin_Mapmatrix3D\X64\Release\ /Y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

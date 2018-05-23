@@ -135,7 +135,7 @@ bool COsgHollowOutSuspendEvent::StartHollowOutSuspendedByScope(osg::ref_ptr<osg:
 	//°´·¶Î§Ðü¿ÕÎï²ÃÇÐ
 	InterfaceCOsgClipByScopeFactory iOsgClipByScopeFactory;
 	InterfaceCOsgClipByScope* iOsgClipByScope = iOsgClipByScopeFactory.create(ACCURATE_HOLLOW_OUT_BY_SUSPEND_SCOPE_1);
-	bool isSuccess = iOsgClipByScope->hollowOutByScope(sceneNode, inFilePath, vecScope, false, iSigEventCallBack,false);
+	bool isSuccess = iOsgClipByScope->hollowOutByScope(sceneNode, inFilePath, vecScope, false, iSigEventCallBack);
 
 	if (isSuccess)
 	{

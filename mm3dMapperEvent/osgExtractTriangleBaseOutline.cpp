@@ -286,13 +286,13 @@ void fitLineLikeWater(osg::ref_ptr<osg::Node> root, osg::Vec3d ps, osg::Vec3d pe
 			}
 		}
 	}
-	/*ofstream out;
+	ofstream out;
 	out.open("d:\\123.txt");
 	for (int i = 0;i<vecPtOut.size();++i)
 	{
 		out << vecPtOut[i].x() << " " << vecPtOut[i].y() << " " << vecPtOut[i].z() << std::endl;
 	}
-	out.close();*/
+	out.close();
 }
 
 void polygonCornerFilter(std::vector<osg::Vec3d>& vecIn)

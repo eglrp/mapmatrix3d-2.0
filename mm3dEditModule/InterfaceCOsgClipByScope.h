@@ -14,7 +14,7 @@ class CLIPBYSCOPEAPI InterfaceCOsgClipByScope
 {
 public:
 	virtual bool hollowOutByScope(osg::ref_ptr<osg::Node> sceneNode, std::string inFilePath, std::vector<CScope> vecClipScope, bool isInside, 
-		InterfaceSigEventCallBack* iSigEventCallBack, bool filePathCheck = true) = 0;
+		InterfaceSigEventCallBack* iSigEventCallBack) = 0;
 };
 
 class CLIPBYSCOPEAPI InterfaceCOsgextractByScope

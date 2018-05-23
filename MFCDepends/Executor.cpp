@@ -210,7 +210,7 @@ bool MFCExcute::OpenDialogEx(std::string &outputFileName, std::string extSelect,
 			}
 		}
 
-		if(_access(strPath, 0) == 0 )//需要#include  <io.h> //上述CFileDialog 只能检查名字一模一样的文件是否已经存在，此段代码用来检测保存的文件未设置扩展名，该文件夹内是否有添加扩展名后名字一样的文件，但是有个问题，若文件夹内有 “1”的文件，想保存的文件名也是“1”，则会提示无法保存，而要的实际情况是，仍然可以保存，因为会添加扩展名进去。
+		if( access(strPath, 0) == 0 )//需要#include  <io.h> //上述CFileDialog 只能检查名字一模一样的文件是否已经存在，此段代码用来检测保存的文件未设置扩展名，该文件夹内是否有添加扩展名后名字一样的文件，但是有个问题，若文件夹内有 “1”的文件，想保存的文件名也是“1”，则会提示无法保存，而要的实际情况是，仍然可以保存，因为会添加扩展名进去。
 		{
 			CString strQuery;
 			strQuery.Format("%s 已经存在，要替换掉吗？", strPath);
